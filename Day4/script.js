@@ -79,9 +79,9 @@
 // }
 
 
-for ( let i = 1; i <=10; i++) {
-    console.log(i**2);
-}
+// for ( let i = 1; i <=10; i++) {
+//     console.log(i**2);
+// }
 
 // console.log("************************");
 
@@ -92,13 +92,13 @@ for ( let i = 1; i <=10; i++) {
 // console.log("************************");        
 
 
-for( let i = 1; i <=8; i++ ) { // 2nd iteration i = 2
+// for( let i = 1; i <=8; i++ ) { // 2nd iteration i = 2
 
-    for( let j = 1; j <= i; j++){  // 2nd iteration j = 1, i = 2
-        process.stdout.write("*");  // prints * without new line
-    }
-    console.log(""); // moves to next line after inner loop completes
-}
+//     for( let j = 1; j <= i; j++){  // 2nd iteration j = 1, i = 2
+//         process.stdout.write("*");  // prints * without new line
+//     }
+//     console.log(""); // moves to next line after inner loop completes
+// }
 
 // *
 // **
@@ -140,3 +140,81 @@ for( let i = 1; i <=8; i++ ) { // 2nd iteration i = 2
 // *       *       *
 // *       *       *
 // *****************
+
+
+// METHOD 1: Without using nested loops
+
+// for( let i = 0; i <3; i++ ) {
+//     console.log("*****************");
+//     console.log("*       *       *");
+//     console.log("*       *       *");
+// }
+// console.log("*****************");
+
+
+// METHOD 2: Using 1 nested loop
+
+// for( let i = 0; i <3; i++ ) {
+//     for( let j = 0; j<17; j++ ) {
+//         process.stdout.write("*");
+//     }
+//     console.log("");
+//     console.log("*       *       *")
+//     console.log("*       *       *")
+// }
+// console.log("*****************");
+
+// METHOD 3: Using 2 nested loops
+
+// for( let i = 0; i <3; i++ ) { 
+//     for( let j = 0; j<17; j++ ) {
+//         process.stdout.write("*");
+//     }
+//     console.log("");
+//     for( let k = 0; k<2; k++ ) {
+//         process.stdout.write("*       *       *\n");
+//     }
+// }
+// console.log("*****************");
+
+// METHOD 4: Using 3 nested loops
+
+// for( let i = 0; i <3; i++ ) { 
+//     for( let j = 0; j<17; j++ ) {
+//         process.stdout.write("*");
+//     }
+//     console.log("");
+//     for( let k = 0; k<2; k++ ) {
+//         for( let l = 0; l<17; l++ ) {
+//             if( l === 0 || l === 8 || l === 16 ) {
+//                 process.stdout.write("*");
+//             } else {
+//                 process.stdout.write(" ");
+//             }
+//         }
+//         console.log("");
+//     }
+// }
+// console.log("*****************");
+
+// METHOD 5: Using 4 loops
+
+// for( let i = 0; i <3; i++ ) { 
+//     for( let j = 0; j<17; j++ ) {
+//         process.stdout.write("*");
+//     }
+//     console.log("");
+//     for( let k = 0; k<2; k++ ) {
+//         for( let l = 0; l<17; l++ ) {
+//             if( l === 0 || l === 8 || l === 16 ) {
+//                 process.stdout.write("*");
+//             } else {
+//                 process.stdout.write(" ");
+//             }
+//         }
+//         console.log("");
+//     }
+// }
+// for( let j = 0; j<17; j++ ) {
+//     process.stdout.write("*");
+// }

@@ -1,6 +1,14 @@
-// const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5];
+
+// console.log(numbers)
+
+// console.log(numbers[0])
+// console.log(numbers[ 1 ])
+// console.log(numbers[ 2 ])
+// console.log(numbers[3])
 
 // for ( let i = 0; i < numbers.length; i++) {
+//     console.log("Value of i is: ", i);
 //     console.log(numbers[i]);
 // }
 

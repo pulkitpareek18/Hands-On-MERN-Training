@@ -63,4 +63,13 @@
 //     console.log(this);
 // }
 
-// showThis(); // In non-strict mode, this refers to the global object (window in browsers)
+// showThis(); // In non-strict mode, this refers to the global object (window in browsers)\
+
+// Default Parameters
+
+// function greet(name="Nikunj") {
+//     console.log(`Hello, ${name}!`);
+// }
+
+// greet(); // Hello, Nikunj!
+// greet("Krish"); // Hello, Krish!

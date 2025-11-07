@@ -1,0 +1,7 @@
+Setting up a React JS Project
+
+Steps:
+
+1. npm create vite@latest
+2. Select the required options then JavaScript + SWC
+

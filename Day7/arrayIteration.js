@@ -1,4 +1,4 @@
-const numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];
 
 // console.log(numbers)
 
@@ -51,3 +51,16 @@ const numbers = [1, 2, 3, 4, 5];
 // const fullNames = users.map(user => `${user.firstName} ${user.lastName}`);
 
 // console.log(fullNames); // Output: [ 'John Doe', 'Jane Smith', 'Emily Jones' ]
+
+
+// JS Map Method
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// const squaredNumbers = numbers.map(function(item){
+//     return item*item
+// })
+
+// console.log(squaredNumbers);
+
+

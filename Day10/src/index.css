@@ -1,0 +1,25 @@
+.light{
+    background-color: white;
+    color: black;
+}
+
+.dark{
+    background-color: black;
+    color: white;
+}
+
+.bg-blue{
+    background-color: blue;
+}
+
+.text-black{
+    color: black;
+}
+
+.text-white{
+    color: white;
+}
+
+.bg-white{
+    background-color: white;
+}

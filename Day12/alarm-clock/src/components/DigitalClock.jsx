@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import alarmSound from "../alarm-sound.wav";
 
 const DigitalClock = () => {
@@ -8,7 +8,7 @@ const DigitalClock = () => {
     const [isAlarmRinging, setIsAlarmRinging] = useState(false);
     // console.log(time.toLocaleTimeString("it-IT"));
 
-    const audio = new Audio(alarmSound); // your file path
+    const audioRef = useRef(new Audio(alarmSound)); // your file path
 
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const DigitalClock = () => {
                 // alert("Alarm ringing!");
                 
                 setIsAlarmRinging(true); 
-                audio.play();
+                audioRef.current.play();
                 // setIsAlarmSet(false);
             }
         }
@@ -33,8 +33,8 @@ const DigitalClock = () => {
     }, [isAlarmSet, alarmTime, time]);
 
     const stopAlarm = () => {
-        audio.pause();
-        audio.currentTime = 0;
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
         setIsAlarmSet(false);
         setIsAlarmRinging(false);
     }
@@ -61,7 +61,7 @@ const DigitalClock = () => {
     <div className="p-8 mx-auto my-auto flex flex-col items-center justify-center min-h-screen bg-gray-100">
         {/* Digital Clock Component */}
 
-        <h2 className="text-2xl font-bold mb-4">Digital Clock</h2>
+        <h2 className="text-2xl font-bold mb-4">Digital Alarm Clock</h2>
         <div className="container h-48 w-96 border p-4 rounded-lg shadow-md">
           <div className="flex items-center justify-center h-full bg-white rounded-lg">
             <span className="text-5xl font-bold">{time.toLocaleTimeString("it-IT")}</span>

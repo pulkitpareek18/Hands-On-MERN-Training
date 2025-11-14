@@ -35,6 +35,7 @@ const News = () => {
                     title={item.title}
                     description={item.description}
                     imgUrl={item.image_url}
+                    link={item.link}
                     key={item.article_id}
                 />
             ))

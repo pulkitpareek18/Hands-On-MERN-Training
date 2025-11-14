@@ -11,14 +11,15 @@ function App() {
   return (
 
     <>
-    <Navbar /> 
 
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/news" element={<News />} />
-      </Routes>
-    </Router>
+      <Router>
+        <Navbar /> 
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/news" element={<News />} />
+        </Routes>
+      </Router>
     
     <Footer /> 
     </>

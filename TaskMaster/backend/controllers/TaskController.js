@@ -29,3 +29,20 @@ export const createTask = async (req, res) => {
     }
 
 }
+
+export const getAllTasks = async (req, res) => {
+    try {
+        const tasks = await TaskModel.find();
+
+        res.status(200).json({
+            message: 'Tasks retrieved successfully',
+            tasks: tasks
+        });
+    }
+    catch (error) {
+        res.status(500).json({
+            message: 'Error retrieving tasks',
+            error: error.message
+        });
+    }
+}

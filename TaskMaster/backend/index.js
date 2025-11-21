@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
-app.use('/task',TaskRouter); // /task/add -> POST: createTask
+app.use('/tasks',TaskRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

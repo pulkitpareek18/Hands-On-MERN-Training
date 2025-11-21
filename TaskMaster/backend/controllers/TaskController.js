@@ -46,3 +46,30 @@ export const getAllTasks = async (req, res) => {
         });
     }
 }
+
+export const updateTask = async (req,res) => {
+    try {
+
+        const id = req.params.id;  // Params used to get ID from URL for ex: /update/:id
+        // const id = req.query.id; // Query used to get ID from URL for ex: /update?id=123
+        
+        const {title, description, status} = req.body;
+
+        const updatedTask = await TaskModel.findByIdAndUpdate(id,{
+            title,
+            description,
+            status
+        }, {new: true});
+
+        res.status(200).json({
+            message: "Task Updated Successfully",
+            task: updatedTask
+        })
+    }
+    catch (error) {
+        res.status(500).json({
+            message: 'Error updating task',
+            error: error.message
+        });
+    }
+}

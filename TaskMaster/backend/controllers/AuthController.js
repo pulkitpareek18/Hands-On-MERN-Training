@@ -24,7 +24,6 @@ export const register = async (req, res) => {
     }
 };
 
-
 export const login = async (req, res) => {
     try {
         const {email, password} = req.body;
@@ -42,9 +41,21 @@ export const login = async (req, res) => {
             "pulkit-secret-key"
         )
 
-        res.status(200).json({message: 'Login successful', token});
+        // Set Cookie with token
+
+        // Cookies are saved in key value pair format {key: value}
+
+        res.status(200).cookie('token', token, { httpOnly: true, secure: false }).json({message: 'Login successful', token});
 
     } catch (error) {
         res.status(500).json({message: 'Login failed', error});
+    }
+};
+
+export const logout = async (req, res) => {
+    try {
+        res.status(200).clearCookie('token').json({message: 'Logout successful'});
+    } catch (error) {
+        res.status(500).json({message: 'Logout failed', error});
     }
 };

@@ -5,12 +5,15 @@ import TaskModel from '../models/TaskModel.js';
 export const createTask = async (req, res) => {
 
     try {
+
         const {title, description, status} = req.body;
+        const userId = req.user.id;
 
         const newTask = new TaskModel({
             title,
             description,
-            status
+            status,
+            user: userId
         });
 
 
@@ -32,7 +35,8 @@ export const createTask = async (req, res) => {
 
 export const getAllTasks = async (req, res) => {
     try {
-        const tasks = await TaskModel.find();
+        const userId = req.user.id;
+        const tasks = await TaskModel.find({user: userId});
 
         res.status(200).json({
             message: 'Tasks retrieved successfully',
@@ -49,13 +53,13 @@ export const getAllTasks = async (req, res) => {
 
 export const updateTask = async (req,res) => {
     try {
-
         const id = req.params.id;  // Params used to get ID from URL for ex: /update/:id
         // const id = req.query.id; // Query used to get ID from URL for ex: /update?id=123
 
         const {title, description, status} = req.body;
+        const userId = req.user.id;
 
-        const updatedTask = await TaskModel.findByIdAndUpdate(id,{
+        const updatedTask = await TaskModel.findOneAndUpdate({_id: id, user: userId}, {
             title,
             description,
             status
@@ -77,9 +81,11 @@ export const updateTask = async (req,res) => {
 export const deleteTask = async (req, res) => {
     try{
 
+        const userId = req.user.id;
+
         const id = req.params.id;
 
-        const deletedTask = await TaskModel.findByIdAndDelete(id);
+        const deletedTask = await TaskModel.find({_id: id, user: userId}).deleteOne();
 
         res.status(200).json({
                 message: "Task Deleted Successfully",
